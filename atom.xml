@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>栖阳小记</title>
   
-  
+  <subtitle>栖阳小记</subtitle>
   <link href="http://lmyyyyyyyyyyy.github.io/atom.xml" rel="self"/>
   
   <link href="http://lmyyyyyyyyyyy.github.io/"/>
