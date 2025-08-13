@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>类中的成分-代码块</title>
+      <link href="/2025/08/13/lei-zhong-de-cheng-fen-dai-ma-kuai/"/>
+      <url>/2025/08/13/lei-zhong-de-cheng-fen-dai-ma-kuai/</url>
+      
+        <content type="html"><![CDATA[<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a><strong>代码块</strong></h2><p>代码块是类的5大成分之一（成员变量、构造器、方法、<strong>代码块</strong>、内部类）</p><h3 id="代码块分为两种："><a href="#代码块分为两种：" class="headerlink" title="代码块分为两种："></a>代码块分为两种：</h3><ul><li><p>静态代码块：</p><ul><li>格式：static{}</li><li>特点：类加载时自动执行，由于类只会加载一次，所以静态代码块也只会执行一次。</li><li>作用：完成类的初始化，例如：对静态变量的初始化赋值。</li></ul></li><li><p>实例代码类：</p><ul><li>格式：{}</li><li>特点：每次创建类对象时，执行实例代码块，并在构造器前执行。</li><li>作用：和构造器一样，都是用来完成对象的初始化的，例如：对实例变量进行初始化赋值。</li></ul></li><li><p>静态代码块</p></li></ul><figure class="highlight plaintext"><figcaption><span>[Java] [静态代码块]</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class codeDemo1 {</span><br><span class="line">    public static String schoolName;</span><br><span class="line">    public static String[] cards = new String[54];</span><br><span class="line">    static{</span><br><span class="line">        System.out.println("===静态代码块执行了===");</span><br><span class="line">        schoolName = "牛马程序员";</span><br><span class="line">        cards[0] = "A";</span><br><span class="line">        cards[1] = "2";</span><br><span class="line">        cards[1] = "3";</span><br><span class="line">        // ...</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    public static vod main(String[] args){</span><br><span class="line">        System.out.println("===main方法块执行了===");</span><br><span class="line">        System.out.println(schoolName);</span><br><span class="line">        </span><br><span class="line">        System.out.println(Arrays.toString(cards));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><ul><li>实例代码块</li></ul><figure class="highlight plaintext"><figcaption><span>[Java] [实例代码块]</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class codeDemo2 {</span><br><span class="line">    private String name;</span><br><span class="line">    private String[] direction = new String[4]; //实例变量</span><br><span class="line">    {</span><br><span class="line">        System.out.println("===实例代码块执行了===");</span><br><span class="line">        name = "Benjamin";</span><br><span class="line">        direction[0] = "N";</span><br><span class="line">        direction[1] = "S";</span><br><span class="line">        direction[2] = "E";</span><br><span class="line">        direction[3] = "W";</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    public static vod main(String[] args){</span><br><span class="line">        System.out.println("===main方法块执行了===");</span><br><span class="line">        new codeDemo2(); // 创建对象时自动执行实例代码块</span><br><span class="line">        new codeDemo2();</span><br><span class="line">        new codeDemo2();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>感谢现在努力的自己。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2025/08/07/hello-world/"/>
       <url>/2025/08/07/hello-world/</url>
