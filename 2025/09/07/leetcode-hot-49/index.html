@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="chatroom_stage1_summary, 栖阳小记">
+    <meta name="keywords" content="leetcode-hot-49, 栖阳小记">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>chatroom_stage1_summary | 栖阳小记</title>
+    <title>leetcode-hot-49 | 栖阳小记</title>
     <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/119034735?v=4">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">chatroom_stage1_summary</h1>
+                    <h1 class="description center-align post-title">leetcode-hot-49</h1>
                 </div>
             </div>
         </div>
@@ -438,16 +438,8 @@
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/SpringBoot/">
-                                <span class="chip bg-color">SpringBoot</span>
-                            </a>
-                        
-                            <a href="/tags/Vue-Vite/">
-                                <span class="chip bg-color">Vue + Vite</span>
-                            </a>
-                        
-                            <a href="/tags/WebSocket/">
-                                <span class="chip bg-color">WebSocket</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
                     </div>
@@ -462,16 +454,8 @@
                                 Java
                             </a>
                         
-                            <a href="/categories/Java/SpringBoot/" class="post-category">
-                                SpringBoot
-                            </a>
-                        
-                            <a href="/categories/Java/SpringBoot/Vue-Vite/" class="post-category">
-                                Vue + Vite
-                            </a>
-                        
-                            <a href="/categories/Java/SpringBoot/Vue-Vite/WebSocket/" class="post-category">
-                                WebSocket
+                            <a href="/categories/Java/leetcode/" class="post-category">
+                                leetcode
                             </a>
                         
                     </div>
@@ -507,40 +491,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="📌-聊天室项目-第一阶段总结"><a href="#📌-聊天室项目-第一阶段总结" class="headerlink" title="📌 聊天室项目 - 第一阶段总结"></a>📌 聊天室项目 - 第一阶段总结</h1><h2 id="🎯-阶段目标"><a href="#🎯-阶段目标" class="headerlink" title="🎯 阶段目标"></a>🎯 阶段目标</h2><ul>
-<li>搭建一个基于 <strong>Spring Boot + WebSocket (SockJS + STOMP)</strong><br>的简易聊天室。</li>
-<li>实现多人实时聊天功能，不同浏览器之间能够互相发送消息。</li>
-<li>支持用户输入昵称，在聊天框中显示”昵称: 消息内容”。</li>
+                <h1 id="LeetCode-49-字母异位词分组（Group-Anagrams）总结"><a href="#LeetCode-49-字母异位词分组（Group-Anagrams）总结" class="headerlink" title="LeetCode 49. 字母异位词分组（Group Anagrams）总结"></a>LeetCode 49. 字母异位词分组（Group Anagrams）总结</h1><h2 id="📋-问题描述"><a href="#📋-问题描述" class="headerlink" title="📋 问题描述"></a>📋 问题描述</h2><p>给定一个字符串数组 <code>strs</code>，将其中所有字母异位词组合在一起。字母异位词是由重新排列源单词的所有字母得到的新单词。</p>
+<p><strong>示例：</strong></p>
+<p>text</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">输入: strs = ["eat","tea","tan","ate","nat","bat"]<br>输出: [["bat"],["nat","tan"],["ate","eat","tea"]]<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="💡-解决方案"><a href="#💡-解决方案" class="headerlink" title="💡 解决方案"></a>💡 解决方案</h2><h3 id="方法思路"><a href="#方法思路" class="headerlink" title="方法思路"></a>方法思路</h3><p>使用哈希表来分组异位词：</p>
+<ul>
+<li><strong>键（Key）</strong>：将每个字符串排序后得到的标准化字符串（异位词排序后相同）</li>
+<li><strong>值（Value）</strong>：存储原始字符串的列表</li>
+<li>遍历每个字符串，排序后作为键，将原始字符串添加到对应的列表中</li>
+<li>最后返回哈希表中所有值的集合</li>
 </ul>
-<hr>
-<h2 id="🖥️-后端部分"><a href="#🖥️-后端部分" class="headerlink" title="🖥️ 后端部分"></a>🖥️ 后端部分</h2><h3 id="1-ChatMessage-java-——-消息对象"><a href="#1-ChatMessage-java-——-消息对象" class="headerlink" title="1. ChatMessage.java —— 消息对象"></a>1. ChatMessage.java —— 消息对象</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@AllArgsConstructor</span><br><span class="hljs-meta">@NoArgsConstructor</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ChatMessage</span> {<br>    <span class="hljs-keyword">private</span> String sender;   <span class="hljs-comment">// 发送者昵称</span><br>    <span class="hljs-keyword">private</span> String content;  <span class="hljs-comment">// 消息内容</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>java</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">class Solution {<br>    public List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) {<br>        Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;&gt;();<br>        for (String str : strs) {<br>            char[] array = str.toCharArray();<br>            Arrays.sort(array);<br>            String key = new String(array);<br>            List&lt;String&gt; list = map.getOrDefault(key, new ArrayList&lt;&gt;());<br>            list.add(str);<br>            map.put(key, list);<br>        }<br>        return new ArrayList&lt;&gt;(map.values());<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
-<h3 id="2-WebSocketConfig-java-——-WebSocket-配置"><a href="#2-WebSocketConfig-java-——-WebSocket-配置" class="headerlink" title="2. WebSocketConfig.java —— WebSocket 配置"></a>2. WebSocketConfig.java —— WebSocket 配置</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-meta">@EnableWebSocketMessageBroker</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WebSocketConfig</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">WebSocketMessageBrokerConfigurer</span> {<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">configureMessageBroker</span><span class="hljs-params">(MessageBrokerRegistry config)</span> {<br>        config.enableSimpleBroker(<span class="hljs-string">"/topic"</span>); <span class="hljs-comment">// 订阅前缀</span><br>        config.setApplicationDestinationPrefixes(<span class="hljs-string">"/app"</span>); <span class="hljs-comment">// 应用前缀</span><br>    }<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">registerStompEndpoints</span><span class="hljs-params">(StompEndpointRegistry registry)</span> {<br>        registry.addEndpoint(<span class="hljs-string">"/chat-websocket"</span>).withSockJS(); <span class="hljs-comment">// 前端连接入口</span><br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
-<h3 id="3-ChatController-java-——-消息处理器"><a href="#3-ChatController-java-——-消息处理器" class="headerlink" title="3. ChatController.java —— 消息处理器"></a>3. ChatController.java —— 消息处理器</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ChatController</span> {<br><br>    <span class="hljs-meta">@MessageMapping("/chat")</span> <span class="hljs-comment">// 前端发到 /app/chat</span><br>    <span class="hljs-meta">@SendTo("/topic/messages")</span> <span class="hljs-comment">// 广播给所有订阅 /topic/messages 的客户端</span><br>    <span class="hljs-keyword">public</span> ChatMessage <span class="hljs-title function_">send</span><span class="hljs-params">(ChatMessage message)</span> {<br>        System.out.println(<span class="hljs-string">"收到消息："</span> + message.getContent());<br>        <span class="hljs-keyword">return</span> message;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
-<hr>
-<h2 id="🌐-前端部分-chat-html"><a href="#🌐-前端部分-chat-html" class="headerlink" title="🌐 前端部分 (chat.html)"></a>🌐 前端部分 (chat.html)</h2><h3 id="1-连接-WebSocket"><a href="#1-连接-WebSocket" class="headerlink" title="1. 连接 WebSocket"></a>1. 连接 WebSocket</h3><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> socket = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SockJS</span>(<span class="hljs-string">'/chat-websocket'</span>);<br>stompClient = <span class="hljs-title class_">Stomp</span>.<span class="hljs-title function_">over</span>(socket);<br><br>stompClient.<span class="hljs-title function_">connect</span>({}, <span class="hljs-keyword">function</span>(<span class="hljs-params">frame</span>) {<br>    stompClient.<span class="hljs-title function_">subscribe</span>(<span class="hljs-string">'/topic/messages'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">response</span>) {<br>        <span class="hljs-keyword">const</span> message = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(response.<span class="hljs-property">body</span>);<br>        <span class="hljs-title function_">showMessage</span>(message.<span class="hljs-property">sender</span> + <span class="hljs-string">": "</span> + message.<span class="hljs-property">content</span>);<br>    });<br>});<br></code></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-发送消息"><a href="#2-发送消息" class="headerlink" title="2. 发送消息"></a>2. 发送消息</h3><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">stompClient.<span class="hljs-title function_">send</span>(<span class="hljs-string">"/app/chat"</span>, {}, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({<br>    <span class="hljs-attr">sender</span>: username,<br>    <span class="hljs-attr">content</span>: msg<br>}));<br></code></pre></td></tr></tbody></table></figure>
-
-<h3 id="3-显示消息"><a href="#3-显示消息" class="headerlink" title="3. 显示消息"></a>3. 显示消息</h3><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">showMessage</span>(<span class="hljs-params">message</span>) {<br>    <span class="hljs-keyword">const</span> chatBox = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"chat-box"</span>);<br>    chatBox.<span class="hljs-property">innerHTML</span> += message + <span class="hljs-string">"&lt;br&gt;"</span>;<br>    chatBox.<span class="hljs-property">scrollTop</span> = chatBox.<span class="hljs-property">scrollHeight</span>; <span class="hljs-comment">// 自动滚动到底部</span><br>}<br></code></pre></td></tr></tbody></table></figure>
-
-<hr>
-<h2 id="🔄-消息流转时序图"><a href="#🔄-消息流转时序图" class="headerlink" title="🔄 消息流转时序图"></a>🔄 消息流转时序图</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs mermaid">sequenceDiagram<br>    participant A as 浏览器A<br>    participant WS as Spring WebSocket服务器<br>    participant B as 浏览器B<br><br>    A-&gt;&gt;WS: ① 连接 /chat-websocket<br>    B-&gt;&gt;WS: ① 连接 /chat-websocket<br>    Note over A, B: 两个浏览器都建立 WebSocket 长连接<br><br>    A-&gt;&gt;WS: ② 发送消息到 /app/chat\n(sender: "yang", content: "hello")<br>    WS-&gt;&gt;WS: ③ ChatController 处理消息<br>    WS-&gt;&gt;B: ④ 广播消息到 /topic/messages\n{"sender":"yang","content":"hello"}<br>    WS-&gt;&gt;A: ④ 广播消息到 /topic/messages\n{"sender":"yang","content":"hello"}<br><br>    B-&gt;&gt;B: ⑤ 前端订阅收到消息，显示到聊天框<br>    A-&gt;&gt;A: ⑤ 自己也收到消息，显示到聊天框<br></code></pre></td></tr></tbody></table></figure>
-
-<hr>
-<h2 id="✅-阶段总结"><a href="#✅-阶段总结" class="headerlink" title="✅ 阶段总结"></a>✅ 阶段总结</h2><ul>
-<li><strong>前端</strong>：通过 SockJS + STOMP 建立连接，订阅消息，发送消息。</li>
-<li><strong>后端</strong>：通过 <code>@MessageMapping</code> 接收消息，<code>@SendTo</code> 广播消息。</li>
-<li><strong>效果</strong>：支持多人实时聊天，消息会显示发送者昵称。</li>
+<h2 id="⏱-复杂度分析"><a href="#⏱-复杂度分析" class="headerlink" title="⏱ 复杂度分析"></a>⏱ 复杂度分析</h2><ul>
+<li><strong>时间复杂度</strong>：O(n × k log k)，其中 n 是字符串数组的长度，k 是字符串的平均长度<ul>
+<li>每个字符串需要排序（O(k log k)）</li>
+<li>需要处理 n 个字符串</li>
 </ul>
-<hr>
-<h2 id="🔜-下一步计划"><a href="#🔜-下一步计划" class="headerlink" title="🔜 下一步计划"></a>🔜 下一步计划</h2><ol>
-<li><strong>消息持久化</strong>：将聊天记录存储到 MySQL，并支持历史消息查询。\</li>
-<li><strong>用户系统</strong>：实现注册/登录，使用 JWT<br>做鉴权，保证昵称和身份唯一性。\</li>
-<li><strong>群聊 / 私聊</strong>：支持多个房间和点对点消息。\</li>
-<li><strong>分布式改造</strong>：使用 Redis Pub/Sub 实现多实例部署。</li>
+</li>
+<li><strong>空间复杂度</strong>：O(n × k)<ul>
+<li>哈希表需要存储所有字符串</li>
+</ul>
+</li>
+</ul>
+<h2 id="🔑-关键点"><a href="#🔑-关键点" class="headerlink" title="🔑 关键点"></a>🔑 关键点</h2><ol>
+<li><strong>异位词特性</strong>：异位词排序后相同，因此排序后的字符串可作为哈希表的键</li>
+<li><strong>哈希表使用</strong>：使用 <code>getOrDefault</code> 方法简化代码，避免不必要的判断</li>
+<li><strong>结果返回</strong>：直接使用 <code>new ArrayList&lt;&gt;(map.values())</code> 将哈希表的值转换为列表</li>
 </ol>
 
                 
@@ -568,7 +552,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Lmyyyyyyyyyyy.github.io/2025/09/07/chatroom-stage1-summary/">http://Lmyyyyyyyyyyy.github.io/2025/09/07/chatroom-stage1-summary/</a>
+                    <a href="http://Lmyyyyyyyyyyy.github.io/2025/09/07/leetcode-hot-49/">http://Lmyyyyyyyyyyy.github.io/2025/09/07/leetcode-hot-49/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -610,16 +594,8 @@
                                     <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/SpringBoot/">
-                                    <span class="chip bg-color">SpringBoot</span>
-                                </a>
-                            
-                                <a href="/tags/Vue-Vite/">
-                                    <span class="chip bg-color">Vue + Vite</span>
-                                </a>
-                            
-                                <a href="/tags/WebSocket/">
-                                    <span class="chip bg-color">WebSocket</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
                                 </a>
                             
                         </div>
@@ -789,9 +765,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2025/09/07/leetcode-hot-49/">
                     <div class="card-image">
@@ -809,9 +786,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-09-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-09-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -828,6 +805,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -850,13 +828,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025/08/13/lei-zhong-de-cheng-fen-dai-ma-kuai/">
+                <a href="/2025/09/07/chatroom-stage1-summary/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="类中的成分-代码块">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="chatroom_stage1_summary">
                         
-                        <span class="card-title">类中的成分-代码块</span>
+                        <span class="card-title">chatroom_stage1_summary</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -867,7 +845,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-08-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-09-07
                             </span>
                         <span class="publish-author">
                             
@@ -875,6 +853,18 @@
                             
                             <a href="/categories/Java/" class="post-category">
                                     Java
+                                </a>
+                            
+                            <a href="/categories/Java/SpringBoot/" class="post-category">
+                                    SpringBoot
+                                </a>
+                            
+                            <a href="/categories/Java/SpringBoot/Vue-Vite/" class="post-category">
+                                    Vue + Vite
+                                </a>
+                            
+                            <a href="/categories/Java/SpringBoot/Vue-Vite/WebSocket/" class="post-category">
+                                    WebSocket
                                 </a>
                             
                             
@@ -886,6 +876,18 @@
                     
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
+                    </a>
+                    
+                    <a href="/tags/Vue-Vite/">
+                        <span class="chip bg-color">Vue + Vite</span>
+                    </a>
+                    
+                    <a href="/tags/WebSocket/">
+                        <span class="chip bg-color">WebSocket</span>
                     </a>
                     
                 </div>

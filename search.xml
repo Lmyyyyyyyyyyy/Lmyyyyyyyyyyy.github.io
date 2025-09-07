@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>leetcode-hot-49</title>
+      <link href="/2025/09/07/leetcode-hot-49/"/>
+      <url>/2025/09/07/leetcode-hot-49/</url>
+      
+        <content type="html"><![CDATA[<h1 id="LeetCode-49-字母异位词分组（Group-Anagrams）总结"><a href="#LeetCode-49-字母异位词分组（Group-Anagrams）总结" class="headerlink" title="LeetCode 49. 字母异位词分组（Group Anagrams）总结"></a>LeetCode 49. 字母异位词分组（Group Anagrams）总结</h1><h2 id="📋-问题描述"><a href="#📋-问题描述" class="headerlink" title="📋 问题描述"></a>📋 问题描述</h2><p>给定一个字符串数组 <code>strs</code>，将其中所有字母异位词组合在一起。字母异位词是由重新排列源单词的所有字母得到的新单词。</p><p><strong>示例：</strong></p><p>text</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">输入: strs = ["eat","tea","tan","ate","nat","bat"]<br>输出: [["bat"],["nat","tan"],["ate","eat","tea"]]<br></code></pre></td></tr></tbody></table></figure><h2 id="💡-解决方案"><a href="#💡-解决方案" class="headerlink" title="💡 解决方案"></a>💡 解决方案</h2><h3 id="方法思路"><a href="#方法思路" class="headerlink" title="方法思路"></a>方法思路</h3><p>使用哈希表来分组异位词：</p><ul><li><strong>键（Key）</strong>：将每个字符串排序后得到的标准化字符串（异位词排序后相同）</li><li><strong>值（Value）</strong>：存储原始字符串的列表</li><li>遍历每个字符串，排序后作为键，将原始字符串添加到对应的列表中</li><li>最后返回哈希表中所有值的集合</li></ul><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>java</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">class Solution {<br>    public List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) {<br>        Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;&gt;();<br>        for (String str : strs) {<br>            char[] array = str.toCharArray();<br>            Arrays.sort(array);<br>            String key = new String(array);<br>            List&lt;String&gt; list = map.getOrDefault(key, new ArrayList&lt;&gt;());<br>            list.add(str);<br>            map.put(key, list);<br>        }<br>        return new ArrayList&lt;&gt;(map.values());<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure><h2 id="⏱-复杂度分析"><a href="#⏱-复杂度分析" class="headerlink" title="⏱ 复杂度分析"></a>⏱ 复杂度分析</h2><ul><li><strong>时间复杂度</strong>：O(n × k log k)，其中 n 是字符串数组的长度，k 是字符串的平均长度<ul><li>每个字符串需要排序（O(k log k)）</li><li>需要处理 n 个字符串</li></ul></li><li><strong>空间复杂度</strong>：O(n × k)<ul><li>哈希表需要存储所有字符串</li></ul></li></ul><h2 id="🔑-关键点"><a href="#🔑-关键点" class="headerlink" title="🔑 关键点"></a>🔑 关键点</h2><ol><li><strong>异位词特性</strong>：异位词排序后相同，因此排序后的字符串可作为哈希表的键</li><li><strong>哈希表使用</strong>：使用 <code>getOrDefault</code> 方法简化代码，避免不必要的判断</li><li><strong>结果返回</strong>：直接使用 <code>new ArrayList&lt;&gt;(map.values())</code> 将哈希表的值转换为列表</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>chatroom_stage1_summary</title>
       <link href="/2025/09/07/chatroom-stage1-summary/"/>
       <url>/2025/09/07/chatroom-stage1-summary/</url>
